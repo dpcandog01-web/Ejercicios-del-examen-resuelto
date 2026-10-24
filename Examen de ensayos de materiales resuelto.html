@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Examen de ensayos de materiales resuelto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fdfcf6;--line:#b9d3ea;--margin:#e58a8a;--ink:#1d3a8a;--red:#b3261e;--note:#3b3b3b;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:#d9d4c7;font-family:'Caveat','Segoe Print','Bradley Hand',cursive;color:var(--ink);font-size:23px;line-height:32px}
+.sheet{max-width:820px;margin:18px auto;padding:32px 22px 40px 76px;position:relative;background:
+ linear-gradient(90deg,transparent 58px,var(--margin) 58px,var(--margin) 60px,transparent 60px),
+ repeating-linear-gradient(transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px),var(--paper);
+ box-shadow:0 4px 18px rgba(0,0,0,.25);border-radius:3px}
+.sheet::before{content:"";position:absolute;left:18px;top:60px;bottom:60px;width:16px;background:radial-gradient(circle,#d9d4c7 0 6px,transparent 7px) 0 0/16px 140px repeat-y}
+h1{font-size:38px;line-height:44px;margin:0 0 6px;text-decoration:underline wavy var(--red) 1px;text-underline-offset:6px}
+h2{font-size:31px;line-height:32px;margin:32px 0 0;color:var(--red);border-bottom:2px solid var(--red);display:inline-block}
+h3{font-size:26px;line-height:32px;margin:32px 0 0}
+p{margin:0}
+.why{color:var(--note);font-size:21px}
+.why b{color:var(--red)}
+.f{margin:0 0 0 24px;font-weight:700}
+.box{display:inline-block;border:2px solid var(--red);border-radius:6px;padding:0 10px;color:var(--red);font-weight:700}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:26px;margin:0 4px}
+.fr>span:first-child{border-bottom:2px solid var(--ink);padding:0 4px}
+.sub{font-size:.7em;vertical-align:sub}
+.sup{font-size:.7em;vertical-align:super}
+.tag{background:#fff3a8;padding:0 6px;border-radius:3px}
+.wide{overflow-x:auto}
+footer{margin-top:32px;color:var(--note);font-size:20px}
+@media print{body{background:none}.sheet{box-shadow:none;margin:0}}
+@media (max-width:520px){body{font-size:20px}.sheet{padding-left:56px;padding-right:12px;background-position:-2px 0}.sheet::before{left:10px}}
+</style>
+</head>
+<body>
+<div class="sheet">
+<h1>Ensayos de materiales: examen resuelto</h1>
+<p class="why">En cada apartado: <b>1)</b> datos, <b>2)</b> fórmula general y por qué se usa, <b>3)</b> sustituir números, <b>4)</b> resultado.</p>
+
+<!-- PREGUNTA 1 -->
+<h2>Pregunta 1 · Dureza Brinell</h2>
+<p><b>Datos:</b> F = 275 kp · D = 6 mm · S<span class="sub">huella</span> = 3,68 mm²</p>
+
+<h3>1.1 Resultado del ensayo</h3>
+<p class="why"><b>¿Por qué?</b> La dureza Brinell mide cuánta fuerza soporta cada mm² de huella. Como nos dan la superficie de la huella, usamos la definición directa.</p>
+<p class="f">HB = <span class="fr"><span>F</span><span>S</span></span></p>
+<p>Sustituyo: HB = <span class="fr"><span>275</span><span>3,68</span></span> = <span class="box">74,7 kp/mm²</span></p>
+
+<h3>1.2 ¿Fue correcta la elección de penetrador y carga?</h3>
+<p class="why"><b>¿Por qué?</b> Un ensayo Brinell solo es válido si la huella no es ni muy pequeña ni muy grande. La norma exige que el diámetro de la huella cumpla:</p>
+<p class="f">0,25·D &lt; d &lt; 0,5·D</p>
+<p class="why">Nos dan la superficie, no d, así que despejamos d de la fórmula de la superficie del casquete esférico:</p>
+<p class="f">S = <span class="fr"><span>π·D</span><span>2</span></span> · ( D − √(D² − d²) )</p>
+<p>Sustituyo: 3,68 = <span class="fr"><span>π·6</span><span>2</span></span> · (6 − √(36 − d²)) = 9,425 · (6 − √(36 − d²))</p>
+<p>6 − √(36 − d²) = 0,3904 → √(36 − d²) = 5,6096</p>
+<p>36 − d² = 31,47 → d² = 4,53 → <span class="box">d ≈ 2,13 mm</span></p>
+<p class="why"><b>Compruebo el intervalo:</b></p>
+<p>0,25·6 = 1,5 mm &nbsp; y &nbsp; 0,5·6 = 3 mm → 1,5 &lt; 2,13 &lt; 3 ✔</p>
+<p><span class="tag">Conclusión:</span> la elección fue <b>correcta</b>, la huella está dentro del intervalo válido.</p>
+
+<!-- PREGUNTA 2 -->
+<h2>Pregunta 2 · Cable de acero (tracción)</h2>
+<p><b>Datos:</b> L<span class="sub">0</span> = 10 m = 10.000 mm · S = 80 mm² · F = 120 kN = 120.000 N · ΔL = 80 mm</p>
+
+<h3>2.1 Alargamiento unitario y módulo de elasticidad</h3>
+<p class="why"><b>¿Por qué?</b> El alargamiento unitario dice cuánto se estira el cable por cada unidad de longitud inicial (no tiene unidades).</p>
+<p class="f">ε = <span class="fr"><span>ΔL</span><span>L<span class="sub">0</span></span></span></p>
+<p>Sustituyo: ε = <span class="fr"><span>80</span><span>10.000</span></span> = <span class="box">0,008</span> (0,8 %)</p>
+<p class="why"><b>¿Por qué?</b> Para el módulo de elasticidad necesito la ley de Hooke (σ = E·ε), válida porque estamos en el campo elástico. Primero calculo la tensión, que es la fuerza por unidad de sección:</p>
+<p class="f">σ = <span class="fr"><span>F</span><span>S</span></span> &nbsp;&nbsp;→&nbsp;&nbsp; E = <span class="fr"><span>σ</span><span>ε</span></span></p>
+<p>σ = <span class="fr"><span>120.000</span><span>80</span></span> = 1.500 N/mm² = 1.500 MPa</p>
+<p>E = <span class="fr"><span>1.500</span><span>0,008</span></span> = 187.500 MPa = <span class="box">187,5 GPa</span></p>
+
+<h3>2.2 Carga para alargar 38 mm</h3>
+<p class="why"><b>¿Por qué?</b> E es una propiedad del material y no cambia. Calculo el nuevo ε', con Hooke obtengo σ' y con la sección saco la fuerza.</p>
+<p class="f">ε' = <span class="fr"><span>ΔL'</span><span>L<span class="sub">0</span></span></span> &nbsp;&nbsp; σ' = E·ε' &nbsp;&nbsp; F' = σ'·S</p>
+<p>ε' = <span class="fr"><span>38</span><span>10.000</span></span> = 0,0038</p>
+<p>σ' = 187.500 · 0,0038 = 712,5 MPa</p>
+<p>F' = 712,5 · 80 = 57.000 N = <span class="box">57 kN</span></p>
+<p class="why"><b>Comprobación:</b> en el campo elástico F es proporcional a ΔL → 120 · <span class="fr"><span>38</span><span>80</span></span> = 57 kN ✔</p>
+
+<!-- PREGUNTA 3 -->
+<h2>Pregunta 3 · Ensayo Charpy</h2>
+<p><b>Datos:</b> m = 30 kg · h<span class="sub">0</span> = 102 cm = 1,02 m · W<span class="sub">absorbida</span> = 180 J · g = 9,8 m/s²</p>
+
+<h3>3.1 Energía almacenada por el martillo</h3>
+<p class="why"><b>¿Por qué?</b> Antes de soltarlo, el martillo está parado a una altura h<span class="sub">0</span>, así que toda su energía es potencial gravitatoria.</p>
+<p class="f">E<span class="sub">p</span> = m · g · h<span class="sub">0</span></p>
+<p>Sustituyo: E<span class="sub">p</span> = 30 · 9,8 · 1,02 = <span class="box">299,9 J ≈ 300 J</span></p>
+
+<h3>3.2 Altura a la que sube tras romper la probeta</h3>
+<p class="why"><b>¿Por qué?</b> Por conservación de la energía: la que tenía el martillo menos la que gasta la probeta al romperse es la que le queda para volver a subir.</p>
+<p class="f">E<span class="sub">final</span> = E<span class="sub">p</span> − W &nbsp;&nbsp;→&nbsp;&nbsp; h = <span class="fr"><span>E<span class="sub">final</span></span><span>m · g</span></span></p>
+<p>E<span class="sub">final</span> = 299,9 − 180 = 119,9 J</p>
+<p>h = <span class="fr"><span>119,9</span><span>30 · 9,8</span></span> = 0,408 m = <span class="box">40,8 cm</span></p>
+
+<!-- PREGUNTA 4 -->
+<h2>Pregunta 4 · Acero AISI 316 (TECBIDÓN)</h2>
+<p><b>Datos:</b> F = 750 kp · D = 5 mm · d = 2 mm · HB del AISI 304 = 170</p>
+
+<h3>4.1 Dureza del AISI 316</h3>
+<p class="why"><b>¿Por qué?</b> Aquí nos dan el diámetro de la huella (d), no su superficie. Por eso usamos la fórmula Brinell escrita con d, que sale de HB = F/S.</p>
+<p class="f">HB = <span class="fr"><span>2 · F</span><span>π · D · ( D − √(D² − d²) )</span></span></p>
+<p>√(25 − 4) = √21 = 4,583</p>
+<p>Denominador: π · 5 · (5 − 4,583) = 15,708 · 0,417 = 6,557</p>
+<p>HB = <span class="fr"><span>2 · 750</span><span>6,557</span></span> = <span class="box">≈ 229 kp/mm²</span></p>
+<p><span class="tag">Conclusión:</span> 229 &gt; 170 → el AISI 316 es más duro y <b>resiste mejor el rayado</b> que el 304.</p>
+
+<h3>4.2 ¿Misma dureza con bola de 10 mm y 3.000 kp?</h3>
+<p class="why"><b>¿Por qué?</b> Si el cociente F/D² es el mismo, las huellas son geométricamente semejantes y el material da la misma dureza.</p>
+<p class="f">Caso 1: <span class="fr"><span>F</span><span>D²</span></span> = <span class="fr"><span>750</span><span>5²</span></span> = 30 &nbsp;&nbsp;&nbsp; Caso 2: <span class="fr"><span>3.000</span><span>10²</span></span> = 30</p>
+<p><span class="tag">Conclusión:</span> <b>Sí</b>, se obtiene la misma dureza (siempre que 0,25·D &lt; d &lt; 0,5·D).</p>
+
+<h3>4.3 Diámetro de la huella en este caso</h3>
+<p class="why"><b>¿Por qué?</b> Al ser huellas semejantes, la relación d/D se mantiene igual que en el primer ensayo.</p>
+<p class="f"><span class="fr"><span>d'</span><span>D'</span></span> = <span class="fr"><span>d</span><span>D</span></span> &nbsp;&nbsp;→&nbsp;&nbsp; d' = D' · <span class="fr"><span>d</span><span>D</span></span></p>
+<p>d' = 10 · <span class="fr"><span>2</span><span>5</span></span> = <span class="box">4 mm</span></p>
+<p class="why"><b>Compruebo el intervalo:</b> 0,25·10 = 2,5 &lt; 4 &lt; 5 = 0,5·10 ✔</p>
+<p class="why"><b>Comprobación con la fórmula:</b> HB = <span class="fr"><span>2 · 3.000</span><span>π · 10 · (10 − √84)</span></span> = <span class="fr"><span>6.000</span><span>31,416 · 0,835</span></span> ≈ 229 ✔</p>
+
+<footer>Truco para estudiar: antes de calcular, pregúntate siempre <i>qué datos tengo</i> y <i>qué fórmula los relaciona con lo que me piden</i>.</footer>
+</div>
+</body>
+</html>
